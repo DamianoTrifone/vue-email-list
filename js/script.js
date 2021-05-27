@@ -8,7 +8,18 @@ var app = new Vue({
 
     el: "#root",
     data: {
-        
-    }
+        emailList: []
+    },
 
+    mounted: function(){
+        for(let i=0; i<10; i++) {
+            axios
+            .get("https:flynn.boolean.careers/exercises/api/random/mail")
+            .then((result) => {
+                const mail = result.data.response;
+                this.emailList.push(mail);
+            });
+        }
+        console.log(this.emailList);
+    }
 })

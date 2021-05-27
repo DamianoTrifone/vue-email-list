@@ -10,7 +10,9 @@
     </head>
     <body>
         <div id="root">
-            
+            <li>
+                <ul v-if="emailList.length==10">{{ emailList }}</ul>
+            </li>
         </div>
 
         <script src="js/script.js"></script>
